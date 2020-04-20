@@ -1,0 +1,89 @@
+<html lang="en">
+<title>COVID-19</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<script src="https://online.tableau.com/javascripts/api/tableau-2.min.js"></script>
+<script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">C LOSE</a> 
+  <a href="index.html"" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">HOME</a> 
+  
+  <a href="Covid_19_map.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CARTE</a> 
+  
+  <a href="Globe.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">VUE GLOBALE PAR DATE</a>
+  
+    <a href="Cas_Compare.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">HUBEI-CHINE-MONDE</a>
+	
+	  <a href="Nombre_de_nouveau_Mort_hors_chine.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">DECES HORS CHINE</a>
+	  
+	    <a href="Nombre_de_nouveau_cas_hors_chine.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CAS HORS CHINE</a>
+		
+		  <a href="Confirmed.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CAS MONDIAL</a>
+		  
+		    <a href="Deaths.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">DECES MONDIAL</a>
+			   <a href="covid19.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">FRANCE CAS PAR DEPARTEMENT</a>
+			   <a href="Nombre_de_cas_par_jours_france.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">FRANCE CAS CONFIRME</a>
+			    <a href="Nombre_de_cas_Deaths_par_jours_france.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">FRANCE DECES</a>
+				 <a href="Nombre_de_cas_Recovered_par_jours_france.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">FRANCE GUERIS</a>
+				 <a href="Evol_Cas_Europe.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">EUROPE CAS CONFIRME</a>
+				 <a href="Evol_Deaths_Europe.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">EUROPE DECES</a>
+				 
+</nav>
+
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">COVID-19</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<div id="tableauViz"></div>
+
+<script>
+	var placeholderDiv = document.getElementById("tableauViz");
+	var url = "https://public.tableau.com/shared/DZ5MW2W4P?:display_count=y&:origin=viz_share_link";
+	var options = {
+	   hideTabs: true,
+	   width: "1900px",
+	   height: "900px",
+	   onFirstInteractive: function() {
+	     // The viz is now ready and can be safely used.
+	   }
+	};
+	var viz = new tableau.Viz(placeholderDiv, url, options);
+
+</script>
